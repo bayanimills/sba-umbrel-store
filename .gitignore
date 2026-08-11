@@ -1,0 +1,10 @@
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+# local dev
+*.log
+app-src/**/state.json
+app-src/**/config.json
+.DS_Store

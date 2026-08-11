@@ -1,0 +1,83 @@
+manifestVersion: 1
+id: sba-blockclock
+category: bitcoin
+name: BlockClock Connect
+version: "0.4.1"
+icon: https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/icon.svg
+tagline: Drive your Coinkite BLOCKCLOCK with the data you care about
+description: >-
+  BlockClock Connect turns your Coinkite BLOCKCLOCK mini or micro into a display
+  for whatever you care about, all from one simple web page on your Umbrel.
+
+
+  Find your clock on the network (or type its IP), then pick the feeds to show:
+  the Bitcoin price in your own currency (AUD, USD, EUR, GBP and more), live
+  Bitcoin network stats (block height, fees, halving countdown, mempool), and
+  your local weather. Arrange the rotation, preview it, and hit save. The app
+  keeps the display fed 24/7 and hands the clock back to its normal screens when
+  you stop it.
+
+
+  No Coinkite account, no cloud, no soldering. It talks to the clock over your
+  own network using the clock's built-in local API.
+releaseNotes: >-
+  ⚠️ The new AI/API control is OFF by default. Nothing changes unless you enable
+  it under Advanced, and every call then needs the secret token the app
+  generates for you.
+
+
+  - New: AI-assistant / API control. Enable it to get a secret bearer token and
+  drive your clock from Claude, OpenAI or any MCP client ("put the BTC price on
+  my clock") - with an OpenAPI schema and a bundled MCP server.
+
+  - New: a home-screen widget showing the BTC price, block height, fastest fee
+  and your clock's live status at a glance.
+
+  - New: live type-to-search weather city picker.
+
+  - Fixed: Space & time stats.
+
+  - Improved: crisper BLOCKCLOCK-style preview font, and units shown on the
+  clock face for hashrate and fees.
+
+  - The full stat library remains: multi-exchange price (incl. Bitaroo/Peach
+  with live AU premium), Bitcoin network + on-chain analytics, your-own-node
+  stats, weather, macro, space, and optional Shopify/BTCPay feeds - all
+  previewed with their real backlight colour, with per-stat order and timing.
+developer: Bayani Mills
+website: https://github.com/bayanimills/blockclock-connect
+dependencies: []
+repo: https://github.com/bayanimills/blockclock-connect
+support: https://github.com/bayanimills/blockclock-connect/issues
+port: 4200
+gallery:
+  - https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/gallery/1.png
+  - https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/gallery/2.png
+  - https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/gallery/3.png
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+widgets:
+  - id: "stats"
+    type: "four-stats"
+    refresh: "1m"
+    endpoint: "web:4200/widgets/stats"
+    link: ""
+    example:
+      type: "four-stats"
+      link: ""
+      items:
+        - title: "BTC price"
+          text: "168,420"
+          subtext: "AUD"
+        - title: "Block height"
+          text: "912,345"
+          subtext: "blocks"
+        - title: "Fees"
+          text: "4"
+          subtext: "sat/vB"
+        - title: "Clock"
+          text: "Live"
+          subtext: "8 stats"
+submitter: Bayani Mills
+submission: https://github.com/bayanimills/blockclock-connect

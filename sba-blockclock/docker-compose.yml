@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: sba-blockclock_web_1
+      APP_PORT: 4200
+      # Machine endpoints only: the /agent/* API (each call requires the
+      # app's own bearer token; 403 while the feature is off) and the public
+      # OpenAPI schema external MCP/AI clients import. The human UI, the
+      # /api/* config routes and /widgets/* stay behind Umbrel's login
+      # (widgets are fetched server-side by umbrelOS, not through the proxy).
+      PROXY_AUTH_WHITELIST: "/agent/*,/openapi.json"
+
+  web:
+    image: ghcr.io/bayanimills/blockclock-connect:0.4.1
+    user: "1000:1000"
+    restart: on-failure
+    init: true
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      DATA_DIR: /data
+      # LAN reach: the container sits on Umbrel's bridge network and reaches
+      # the BLOCKCLOCK over routed TCP - which is why subnet-scan discovery
+      # and manual IP entry both work without host networking.
+      PYTHONUNBUFFERED: "1"
