@@ -2,7 +2,7 @@ manifestVersion: 1
 id: sba-blockclock
 category: bitcoin
 name: BlockClock Connect
-version: "0.4.1"
+version: "0.5.1"
 icon: https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/icon.svg
 tagline: Drive your Coinkite BLOCKCLOCK with the data you care about
 description: >-
@@ -21,29 +21,25 @@ description: >-
   No Coinkite account, no cloud, no soldering. It talks to the clock over your
   own network using the clock's built-in local API.
 releaseNotes: >-
-  ⚠️ The new AI/API control is OFF by default. Nothing changes unless you enable
-  it under Advanced, and every call then needs the secret token the app
-  generates for you.
+  - Fixed: the feeder now keeps running when the clock misses a push. A dropped
+  update costs a single cycle - it backs off briefly and resumes, instead of
+  stopping until you restart it.
 
+  - New: cross-source spread - a price frame comparing any two exchanges you
+  pick, in your chosen currency (the general form of a regional premium).
 
-  - New: AI-assistant / API control. Enable it to get a secret bearer token and
-  drive your clock from Claude, OpenAI or any MCP client ("put the BTC price on
-  my clock") - with an OpenAPI schema and a bundled MCP server.
+  - New: gold and silver spot in any currency, not just USD, plus the full set
+  of ECB currencies for custom forex pairs.
 
-  - New: a home-screen widget showing the BTC price, block height, fastest fee
-  and your clock's live status at a glance.
+  - New: a sunset-time frame with a choosable short label.
 
-  - New: live type-to-search weather city picker.
+  - New: on-chain cohort analytics (keyless) - short- and long-term holder MVRV
+  and cost basis, AVIV ratio, liveliness and the thermocap multiple.
 
-  - Fixed: Space & time stats.
-
-  - Improved: crisper BLOCKCLOCK-style preview font, and units shown on the
-  clock face for hashrate and fees.
-
-  - The full stat library remains: multi-exchange price (incl. Bitaroo/Peach
-  with live AU premium), Bitcoin network + on-chain analytics, your-own-node
-  stats, weather, macro, space, and optional Shopify/BTCPay feeds - all
-  previewed with their real backlight colour, with per-stat order and timing.
+  - The full stat library remains: multi-exchange price with live regional
+  premium, Bitcoin network + on-chain analytics, your-own-node stats, weather,
+  macro, space, and optional Shopify feeds - all previewed with their real
+  backlight colour, with per-stat order and timing.
 developer: Bayani Mills
 website: https://github.com/bayanimills/blockclock-connect
 dependencies: []
