@@ -2,7 +2,7 @@ manifestVersion: 1
 id: sba-blockclock
 category: bitcoin
 name: BlockClock Connect
-version: "0.5.1"
+version: "0.6.0"
 icon: https://raw.githubusercontent.com/bayanimills/sba-umbrel-store/main/sba-blockclock/icon.svg
 tagline: Drive your Coinkite BLOCKCLOCK with the data you care about
 description: >-
@@ -21,6 +21,12 @@ description: >-
   No Coinkite account, no cloud, no soldering. It talks to the clock over your
   own network using the clock's built-in local API.
 releaseNotes: >-
+  - New: optional clock System Password. If you protect your BLOCKCLOCK with a
+  password (its Preferences page), enter the same password in the connect card
+  and BlockClock Connect authenticates every request. A wrong or missing
+  password is reported as such instead of looking like the clock is offline,
+  and the password is never shown back.
+
   - Fixed: the feeder now keeps running when the clock misses a push. A dropped
   update costs a single cycle - it backs off briefly and resumes, instead of
   stopping until you restart it.

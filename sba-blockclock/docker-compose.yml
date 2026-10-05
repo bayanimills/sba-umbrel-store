@@ -13,7 +13,7 @@ services:
       PROXY_AUTH_WHITELIST: "/agent/*,/openapi.json"
 
   web:
-    image: ghcr.io/bayanimills/blockclock-connect:0.5.1@sha256:19bca047eb5f0b940d1cd47763aeda9e46c20caddffaa3af75d442d5b6bc020d
+    image: ghcr.io/bayanimills/blockclock-connect:0.6.0@sha256:58cf6ee2f152f4e96ec6a2d92b22635973974eef586a2a432e13a85a39196a3e
     user: "1000:1000"
     restart: on-failure
     init: true
